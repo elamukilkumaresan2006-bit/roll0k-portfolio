@@ -1,0 +1,307 @@
+@import url('https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700,800&f[]=cabinet-grotesk@700,800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-void: #050506;
+  --color-panel: #0d0e13;
+  --color-panel-2: #14151c;
+  --color-blue: #3d6bff;
+  --color-blue-soft: #6f8bff;
+  --color-purple: #9b6bff;
+  --color-purple-soft: #c9b3ff;
+  --color-mist: #8a8b96;
+  --color-fog: #c4c5cf;
+  --color-paper: #f5f5f7;
+
+  --font-display: 'Cabinet Grotesk', 'General Sans', sans-serif;
+  --font-body: 'General Sans', 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+* { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  background: var(--color-void);
+}
+
+body {
+  margin: 0;
+  background: var(--color-void);
+  color: var(--color-paper);
+  font-family: var(--font-body);
+  overflow-x: hidden;
+  cursor: none;
+}
+
+@media (max-width: 860px), (hover: none) {
+  body { cursor: auto; }
+  .cursor-layer { display: none !important; }
+}
+
+::selection {
+  background: var(--color-blue);
+  color: white;
+}
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--color-void); }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(var(--color-blue), var(--color-purple));
+  border-radius: 4px;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ---- Signature: timecode / slate labels ---- */
+.timecode {
+  font-family: var(--font-mono);
+  letter-spacing: 0.08em;
+  font-variant-numeric: tabular-nums;
+}
+
+.slate-label {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--color-mist);
+}
+
+.slate-label span {
+  color: var(--color-blue-soft);
+}
+
+/* ---- Gradient text ---- */
+.grad-text {
+  background: linear-gradient(100deg, var(--color-blue) 0%, var(--color-purple) 60%, var(--color-purple-soft) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* ---- Glass panel ---- */
+.glass {
+  background: linear-gradient(160deg, rgba(255,255,255,0.06), rgba(255,255,255,0.015));
+  border: 1px solid rgba(255,255,255,0.08);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+/* ---- Film grain overlay ---- */
+.grain {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  opacity: 0.035;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ---- Slow cinematic light leaks ---- */
+.light-leaks {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  opacity: 0.5;
+  mix-blend-mode: screen;
+  background:
+    radial-gradient(600px 500px at 15% 20%, rgba(61,107,255,0.10), transparent 60%),
+    radial-gradient(700px 600px at 85% 75%, rgba(155,107,255,0.10), transparent 60%);
+  background-repeat: no-repeat;
+  animation: leak-drift 26s ease-in-out infinite alternate;
+}
+
+@keyframes leak-drift {
+  0%   { background-position: 0% 0%, 100% 100%; }
+  50%  { background-position: 8% 6%, 92% 90%; }
+  100% { background-position: 0% 10%, 100% 85%; }
+}
+
+/* ---- Drifting dust particles ---- */
+.dust {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 2;
+  opacity: 0.25;
+  background-image:
+    radial-gradient(1.5px 1.5px at 10% 20%, rgba(255,255,255,0.5) 50%, transparent 100%),
+    radial-gradient(1px 1px at 30% 65%, rgba(255,255,255,0.4) 50%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 55% 30%, rgba(255,255,255,0.5) 50%, transparent 100%),
+    radial-gradient(1px 1px at 70% 80%, rgba(255,255,255,0.35) 50%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 85% 15%, rgba(255,255,255,0.45) 50%, transparent 100%),
+    radial-gradient(1px 1px at 92% 55%, rgba(255,255,255,0.4) 50%, transparent 100%);
+  background-repeat: repeat;
+  background-size: 100% 100%;
+  animation: dust-drift 40s linear infinite;
+}
+
+@keyframes dust-drift {
+  0%   { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(-2%, -6%, 0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .light-leaks, .dust { animation: none; }
+}
+
+/* ================= Intro-only cinematic effects ================= */
+
+.intro-grain {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  opacity: 0.05;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.intro-vignette {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, transparent 40%, rgba(0,0,0,0.55) 100%);
+}
+
+.intro-leak {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  opacity: 0.4;
+  mix-blend-mode: screen;
+  background:
+    radial-gradient(500px 400px at 20% 15%, rgba(61,107,255,0.12), transparent 60%),
+    radial-gradient(500px 400px at 80% 85%, rgba(155,107,255,0.12), transparent 60%);
+}
+
+/* Logo revealed by a playhead sweep, not a fade */
+.logo-sweep-text {
+  clip-path: inset(0 100% 0 0);
+}
+.logo-sweep-active {
+  animation: logo-sweep 1.1s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+}
+@keyframes logo-sweep {
+  to { clip-path: inset(0 0% 0 0); }
+}
+
+.playhead-line {
+  position: absolute;
+  top: -10px;
+  bottom: -10px;
+  left: 0;
+  width: 2px;
+  background: var(--color-blue-soft);
+  box-shadow: 0 0 16px 2px rgba(111, 139, 255, 0.9);
+  animation: playhead-sweep 1.1s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+}
+@keyframes playhead-sweep {
+  from { left: 0%; }
+  to   { left: 100%; }
+}
+
+/* Simple left-to-right line reveal, used under the logo and before the tagline */
+.line-grow {
+  height: 2px;
+  transform-origin: left;
+  transform: scaleX(0);
+  background: linear-gradient(90deg, var(--color-blue), var(--color-purple));
+  box-shadow: 0 0 12px rgba(111, 139, 255, 0.6);
+  animation: line-grow 0.8s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+}
+@keyframes line-grow {
+  to { transform: scaleX(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .logo-sweep-active, .playhead-line, .line-grow { animation: none; clip-path: none; transform: none; }
+}
+
+/* ---- Custom cursor (playhead scrub) ---- */
+.cursor-layer {
+  position: fixed;
+  top: 0; left: 0;
+  z-index: 100;
+  pointer-events: none;
+}
+
+.cursor-dot {
+  position: fixed;
+  top: 0; left: 0;
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: var(--color-paper);
+  transform: translate(-50%, -50%);
+  z-index: 101;
+  pointer-events: none;
+}
+
+.cursor-scrub {
+  position: fixed;
+  top: 0; left: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.35);
+  transform: translate(-50%, -50%);
+  z-index: 100;
+  pointer-events: none;
+  transition: width 0.25s ease, height 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+}
+
+/* ---- Magnetic button base ---- */
+.magnetic {
+  will-change: transform;
+}
+
+/* ---- Buttons ---- */
+.btn-primary {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 16px 32px;
+  border-radius: 999px;
+  background: var(--color-paper);
+  color: var(--color-void);
+  border: 1px solid var(--color-paper);
+  transition: background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+.btn-primary:hover {
+  box-shadow: 0 0 40px rgba(155, 107, 255, 0.5);
+}
+
+.btn-ghost {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 15px 32px;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--color-paper);
+  border: 1px solid rgba(255,255,255,0.25);
+  transition: border-color 0.3s ease, background 0.3s ease;
+}
+.btn-ghost:hover {
+  border-color: var(--color-blue-soft);
+  background: rgba(61,107,255,0.08);
+}
+
+/* Section fade edges */
+.edge-fade-top {
+  background: linear-gradient(to bottom, var(--color-void), transparent);
+}
