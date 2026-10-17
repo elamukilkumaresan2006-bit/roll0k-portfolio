@@ -305,3 +305,33 @@ body {
 .edge-fade-top {
   background: linear-gradient(to bottom, var(--color-void), transparent);
 }
+/* High-Energy Video Editing Theme Colors */
+:root {
+  --background: #020617;      /* Deep Obsidian / Dark Slate */
+  --primary-color: #f97316;  /* Electric Orange */
+  --secondary-color: #f59e0b;/* Amber / Warm Yellow */
+  --accent-color: #ef4444;   /* Crimson Red */
+  --text-main: #ffffff;      /* Crisp White */
+  --text-muted: #94a3b8;     /* Subtle Silver */
+}
+
+/* Global Background and Text Color */
+body {
+  background-color: var(--background) !important;
+  color: var(--text-main) !important;
+  overflow-x: hidden;
+}
+
+/* Make headings, titles, and highlighted text pop in Orange/Yellow */
+h1, h2, h3, .text-primary {
+  color: var(--primary-color) !important;
+}
+
+p, .text-muted {
+  color: var(--text-muted) !important;
+}
+
+/* Update atmospheric light leak overlay to faint orange glow */
+.light-leaks {
+  background: radial-gradient(circle, rgba(249, 115, 22, 0.15) 0%, rgba(2, 6, 23, 0.9) 70%) !important;
+}
