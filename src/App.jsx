@@ -4,6 +4,7 @@ import { Stars, Sparkles } from '@react-three/drei'
 import * as THREE from 'three'
 
 // UI components & sections
+import Tools from './sections/Tools'
 import IntroAnimation from './components/IntroAnimation'
 import CustomCursor from './components/CustomCursor'
 import Navbar from './components/Navbar'
@@ -150,6 +151,7 @@ export default function App() {
         <Navbar />
         <main>
           <Hero />
+          <Tools />
           <About />
           <Skills />
           <Journey />

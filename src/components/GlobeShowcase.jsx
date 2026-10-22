@@ -320,7 +320,8 @@ export default function GlobeShowcase() {
       <div ref={wrapRef} className="relative w-full aspect-square max-w-[620px] mx-auto select-none">
         <div
           ref={labelRef}
-          className="pointer-events-none absolute left-0 top-0 opacity-0 transition-opacity duration-150 z-10"
+          className="pointer-events-none absolute left-0 top-0 opacity-0 transi
+          tion-opacity duration-150 z-10"
         >
           <span className="flex items-center justify-center w-16 h-16 rounded-full bg-paper text-void text-[11px] font-bold tracking-widest shadow-[0_0_30px_rgba(255,255,255,0.35)]">
             VIEW
