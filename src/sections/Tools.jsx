@@ -56,9 +56,9 @@ export default function Tools() {
         <svg viewBox="0 0 1000 500" className="absolute inset-0 w-full h-full" fill="none">
           <defs>
             <linearGradient id="swirl" x1="0" x2="1">
-              <stop offset="0" stopColor="#3d6bff" stopOpacity="0" />
-              <stop offset="0.5" stopColor="#9b6bff" />
-              <stop offset="1" stopColor="#c9b3ff" stopOpacity="0" />
+              <stop offset="0" stopColor="#3B0A60" stopOpacity="0" />
+              <stop offset="0.5" stopColor="#00E5FF" />
+              <stop offset="1" stopColor="#00E5FF" stopOpacity="0" />
             </linearGradient>
             <filter id="glow"><feGaussianBlur stdDeviation="5" /></filter>
           </defs>
@@ -80,7 +80,7 @@ export default function Tools() {
         <motion.div
           animate={{ scale: [1, 1.06, 1] }}
           transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
-          className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-36 h-36 md:w-44 md:h-44 rounded-full flex items-center justify-center bg-[radial-gradient(circle,rgba(155,107,255,0.45),rgba(61,107,255,0.15)_60%,transparent_72%)] shadow-[0_0_90px_rgba(111,139,255,0.45)]"
+          className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-36 h-36 md:w-44 md:h-44 rounded-full flex items-center justify-center bg-[radial-gradient(circle,rgba(59,10,96,1),rgba(0,229,255,0.15)_60%,transparent_72%)] shadow-[0_0_90px_rgba(0,229,255,0.45)]"
         >
           <span className="font-display text-2xl md:text-3xl font-extrabold grad-text">
             roll<span className="font-mono">0</span>k
@@ -94,7 +94,7 @@ export default function Tools() {
             ref={(el) => (els.current[i] = el)}
             className="absolute left-1/2 top-1/2 will-change-transform"
           >
-            <div className="glass rounded-2xl w-[84px] md:w-[104px] py-4 flex flex-col items-center gap-1.5 shadow-[0_18px_40px_-12px_rgba(61,107,255,0.5)]">
+            <div className="glass rounded-2xl w-[84px] md:w-[104px] py-4 flex flex-col items-center gap-1.5 shadow-[0_18px_40px_-12px_rgba(0,229,255,0.5)]">
               <span className="font-display text-xl md:text-2xl font-extrabold text-paper">{t.short}</span>
               <span className="timecode text-[8px] md:text-[9px] text-fog text-center leading-tight px-1">{t.name}</span>
               {t.note && <span className="timecode text-[8px] text-blue-soft">{t.note}</span>}

@@ -9,7 +9,7 @@ export default function Hero() {
   return (
     <section id="home" className="relative min-h-screen flex items-center overflow-hidden">
       {/* ambient background */}
-      <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top_left,rgba(61,107,255,0.16),transparent_55%),radial-gradient(ellipse_at_bottom_right,rgba(155,107,255,0.14),transparent_50%)]" />
+      <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top_left,rgba(0,229,255,0.16),transparent_55%),radial-gradient(ellipse_at_bottom_right,rgba(59,10,96,0.42),transparent_50%)]" />
 
       <div className="max-w-7xl mx-auto w-full px-6 md:px-10 pt-32 pb-24 grid lg:grid-cols-[1fr_1.05fr] gap-10 lg:gap-6 items-center">
         {/* Text side */}

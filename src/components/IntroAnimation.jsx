@@ -41,10 +41,10 @@ const IntroAnimation = ({ onComplete }) => {
   }, [animationStep, onComplete, introWords.length]);
 
   const colors = {
-    background: '#020617',
+    background: '#050505',
     textPrimary: '#ffffff',
-    textAccent: '#f97316',
-    textAmber: '#f59e0b'
+    textAccent: '#00E5FF',
+    textAmber: '#00E5FF'
   };
 
   return (

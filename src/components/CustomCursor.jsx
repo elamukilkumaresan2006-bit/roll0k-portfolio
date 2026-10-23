@@ -23,8 +23,8 @@ export default function CustomCursor() {
         if (isInteractive) {
           ringRef.current.style.width = '64px'
           ringRef.current.style.height = '64px'
-          ringRef.current.style.borderColor = 'rgba(155,107,255,0.9)'
-          ringRef.current.style.background = 'rgba(61,107,255,0.08)'
+          ringRef.current.style.borderColor = 'rgba(0,229,255,0.9)'
+          ringRef.current.style.background = 'rgba(0,229,255,0.08)'
         } else {
           ringRef.current.style.width = '40px'
           ringRef.current.style.height = '40px'

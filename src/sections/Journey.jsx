@@ -57,9 +57,9 @@ export default function Journey() {
           <svg viewBox="0 0 1000 220" className="w-full" fill="none">
             <defs>
               <linearGradient id="arc" x1="0" x2="1">
-                <stop offset="0" stopColor="#3d6bff" stopOpacity="0.2" />
-                <stop offset="0.5" stopColor="#9b6bff" />
-                <stop offset="1" stopColor="#c9b3ff" stopOpacity="0.2" />
+                <stop offset="0" stopColor="#3B0A60" stopOpacity="0.2" />
+                <stop offset="0.5" stopColor="#00E5FF" />
+                <stop offset="1" stopColor="#00E5FF" stopOpacity="0.2" />
               </linearGradient>
               <filter id="g2"><feGaussianBlur stdDeviation="6" /></filter>
             </defs>
@@ -76,14 +76,14 @@ export default function Journey() {
               const p = pt(n > 1 ? k / (n - 1) : 0)
               return (
                 <g key={k}>
-                  <circle cx={p.x} cy={p.y} r="3" fill={k === i ? '#fff' : '#6f8bff'} />
+                  <circle cx={p.x} cy={p.y} r="3" fill={k === i ? '#fff' : '#00E5FF'} />
                   <text x={p.x} y={p.y - 16} textAnchor="middle" fontSize="13" fontFamily="monospace" letterSpacing="2" fill={k === i ? '#fff' : '#8a8b96'}>
                     {it.when}
                   </text>
                 </g>
               )
             })}
-            <motion.circle animate={{ cx: m.x, cy: m.y }} transition={{ duration: 0.9, ease: 'easeInOut' }} r="16" fill="#9b6bff" filter="url(#g2)" />
+            <motion.circle animate={{ cx: m.x, cy: m.y }} transition={{ duration: 0.9, ease: 'easeInOut' }} r="16" fill="#00E5FF" filter="url(#g2)" />
             <motion.circle animate={{ cx: m.x, cy: m.y }} transition={{ duration: 0.9, ease: 'easeInOut' }} r="6" fill="#fff" />
           </svg>
         </div>
@@ -104,7 +104,7 @@ export default function Journey() {
                 style={{ '--ry': `${(mid - k) * 10}deg`, '--ty': `${Math.abs(k - mid) ** 2 * 7}px` }}
                 className={`relative shrink-0 snap-center w-40 md:w-auto md:flex-1 md:max-w-[190px] aspect-[3/4] rounded-2xl overflow-hidden border transition-all duration-500 md:[transform:rotateY(var(--ry))_translateY(var(--ty))] ${
                   on
-                    ? 'border-blue-soft/70 scale-105 brightness-110 shadow-[0_20px_60px_-10px_rgba(111,139,255,0.6)]'
+                    ? 'border-blue-soft/70 scale-105 brightness-110 shadow-[0_20px_60px_-10px_rgba(0,229,255,0.6)]'
                     : 'border-white/10 brightness-[0.6]'
                 }`}
               >

@@ -55,7 +55,7 @@ export default function Projects() {
                   <motion.div
                     variants={{ hover: { scale: 1.08 } }}
                     transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-                    className="w-full h-full bg-[linear-gradient(150deg,rgba(61,107,255,0.16),rgba(155,107,255,0.1))] flex items-center justify-center"
+                    className="w-full h-full bg-[linear-gradient(150deg,rgba(0,229,255,0.16),rgba(59,10,96,0.3))] flex items-center justify-center"
                   >
                     <span className="timecode text-xs text-white/40">THUMBNAIL · {p.code}</span>
                   </motion.div>

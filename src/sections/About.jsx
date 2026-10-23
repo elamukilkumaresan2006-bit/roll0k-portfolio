@@ -124,7 +124,7 @@ export default function About() {
           transition={{ duration: 0.8, delay: 0.1 }}
           className="relative glass rounded-3xl px-8 py-12 md:px-16 md:py-16 mt-14 text-center overflow-hidden"
         >
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(155,107,255,0.14),transparent_65%)] pointer-events-none" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(59,10,96,0.42),transparent_65%)] pointer-events-none" />
           <p className="relative font-display italic text-2xl md:text-4xl leading-snug max-w-3xl mx-auto">
             "The best edit is the one people{' '}
             <span className="grad-text">feel</span>, not notice."

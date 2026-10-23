@@ -3,13 +3,13 @@
 @import "tailwindcss";
 
 @theme {
-  --color-void: #050506;
-  --color-panel: #0d0e13;
-  --color-panel-2: #14151c;
-  --color-blue: #3d6bff;
-  --color-blue-soft: #6f8bff;
-  --color-purple: #9b6bff;
-  --color-purple-soft: #c9b3ff;
+  --color-void: #050505;
+  --color-panel: #0b0612;
+  --color-panel-2: #12091c;
+  --color-blue: #00E5FF;
+  --color-blue-soft: #5CF0FF;
+  --color-purple: #3B0A60;
+  --color-purple-soft: #A06AE0;
   --color-mist: #8a8b96;
   --color-fog: #c4c5cf;
   --color-paper: #f5f5f7;
@@ -42,7 +42,7 @@ body {
 
 ::selection {
   background: var(--color-blue);
-  color: white;
+  color: #050505;
 }
 
 ::-webkit-scrollbar { width: 6px; }
@@ -91,8 +91,8 @@ body {
 
 /* ---- Glass panel ---- */
 .glass {
-  background: linear-gradient(160deg, rgba(255,255,255,0.06), rgba(255,255,255,0.015));
-  border: 1px solid rgba(255,255,255,0.08);
+  background: linear-gradient(160deg, rgba(59,10,96,0.28), rgba(59,10,96,0.06));
+  border: 1px solid rgba(59,10,96,0.75);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
 }
@@ -117,8 +117,8 @@ body {
   opacity: 0.5;
   mix-blend-mode: screen;
   background:
-    radial-gradient(600px 500px at 15% 20%, rgba(61,107,255,0.10), transparent 60%),
-    radial-gradient(700px 600px at 85% 75%, rgba(155,107,255,0.10), transparent 60%);
+    radial-gradient(600px 500px at 15% 20%, rgba(0,229,255,0.10), transparent 60%),
+    radial-gradient(700px 600px at 85% 75%, rgba(59,10,96,0.3), transparent 60%);
   background-repeat: no-repeat;
   animation: leak-drift 26s ease-in-out infinite alternate;
 }
@@ -182,8 +182,8 @@ body {
   opacity: 0.4;
   mix-blend-mode: screen;
   background:
-    radial-gradient(500px 400px at 20% 15%, rgba(61,107,255,0.12), transparent 60%),
-    radial-gradient(500px 400px at 80% 85%, rgba(155,107,255,0.12), transparent 60%);
+    radial-gradient(500px 400px at 20% 15%, rgba(0,229,255,0.12), transparent 60%),
+    radial-gradient(500px 400px at 80% 85%, rgba(59,10,96,0.36), transparent 60%);
 }
 
 /* Logo revealed by a playhead sweep, not a fade */
@@ -204,7 +204,7 @@ body {
   left: 0;
   width: 2px;
   background: var(--color-blue-soft);
-  box-shadow: 0 0 16px 2px rgba(111, 139, 255, 0.9);
+  box-shadow: 0 0 16px 2px rgba(0,229,255,0.9);
   animation: playhead-sweep 1.1s cubic-bezier(0.65, 0, 0.35, 1) forwards;
 }
 @keyframes playhead-sweep {
@@ -218,7 +218,7 @@ body {
   transform-origin: left;
   transform: scaleX(0);
   background: linear-gradient(90deg, var(--color-blue), var(--color-purple));
-  box-shadow: 0 0 12px rgba(111, 139, 255, 0.6);
+  box-shadow: 0 0 12px rgba(0,229,255,0.6);
   animation: line-grow 0.8s cubic-bezier(0.65, 0, 0.35, 1) forwards;
 }
 @keyframes line-grow {
@@ -275,13 +275,13 @@ body {
   text-transform: uppercase;
   padding: 16px 32px;
   border-radius: 999px;
-  background: var(--color-paper);
+  background: var(--color-blue);
   color: var(--color-void);
-  border: 1px solid var(--color-paper);
+  border: 1px solid var(--color-blue);
   transition: background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
 }
 .btn-primary:hover {
-  box-shadow: 0 0 40px rgba(155, 107, 255, 0.5);
+  box-shadow: 0 0 40px rgba(0,229,255,0.5);
 }
 
 .btn-ghost {
@@ -298,40 +298,24 @@ body {
 }
 .btn-ghost:hover {
   border-color: var(--color-blue-soft);
-  background: rgba(61,107,255,0.08);
+  background: rgba(0,229,255,0.08);
 }
 
 /* Section fade edges */
 .edge-fade-top {
   background: linear-gradient(to bottom, var(--color-void), transparent);
 }
-/* High-Energy Video Editing Theme Colors */
+/* Palette: Jet Black / Royal Amethyst / Electric Cyan */
 :root {
-  --background: #020617;      /* Deep Obsidian / Dark Slate */
-  --primary-color: #f97316;  /* Electric Orange */
-  --secondary-color: #f59e0b;/* Amber / Warm Yellow */
-  --accent-color: #ef4444;   /* Crimson Red */
-  --text-main: #ffffff;      /* Crisp White */
-  --text-muted: #94a3b8;     /* Subtle Silver */
+  --background: #050505;
+  --primary-color: #00E5FF;
+  --secondary-color: #3B0A60;
+  --accent-color: #00E5FF;
+  --text-main: #ffffff;
+  --text-muted: #94a3b8;
 }
-
-/* Global Background and Text Color */
-body {
-  background-color: var(--background) !important;
-  color: var(--text-main) !important;
-  overflow-x: hidden;
-}
-
-/* Make headings, titles, and highlighted text pop in Orange/Yellow */
-h1, h2, h3, .text-primary {
-  color: var(--primary-color) !important;
-}
-
-p, .text-muted {
-  color: var(--text-muted) !important;
-}
-
-/* Update atmospheric light leak overlay to faint orange glow */
-.light-leaks {
-  background: radial-gradient(circle, rgba(249, 115, 22, 0.15) 0%, rgba(2, 6, 23, 0.9) 70%) !important;
-}
+body { background-color: var(--background) !important; color: var(--text-main) !important; overflow-x: hidden; }
+h1, h2, h3 { color: var(--text-main) !important; }
+.text-primary { color: var(--primary-color) !important; }
+p, .text-muted { color: var(--text-muted) !important; }
+.light-leaks { background: radial-gradient(circle, rgba(59,10,96,0.35) 0%, rgba(5,5,5,0.9) 70%) !important; }

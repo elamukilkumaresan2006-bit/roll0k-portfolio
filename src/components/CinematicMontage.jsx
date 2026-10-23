@@ -51,7 +51,7 @@ export default function CinematicMontage({ clips = [], className = '' }) {
           }`}
         />
       ) : (
-        <div className="absolute inset-0 flex items-center justify-center bg-[linear-gradient(150deg,rgba(61,107,255,0.15),rgba(155,107,255,0.1))]">
+        <div className="absolute inset-0 flex items-center justify-center bg-[linear-gradient(150deg,rgba(0,229,255,0.15),rgba(59,10,96,0.3))]">
           <div className="text-center px-6">
             <span className="slate-label block mb-2">MONTAGE REEL</span>
             <span className="timecode text-xs text-white/40">

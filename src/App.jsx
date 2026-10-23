@@ -32,14 +32,14 @@ function CinematicAura() {
       <pointLight 
         position={[0, 1, 2]} 
         intensity={2.5} 
-        color="#f97316" 
+        color="#00E5FF" 
         distance={20} 
         decay={2}
       />
       <pointLight 
         position={[2, -1, 1]} 
         intensity={1.5} 
-        color="#f59e0b" 
+        color="#00E5FF" 
         distance={15} 
         decay={2}
       />
@@ -50,7 +50,7 @@ function CinematicAura() {
         scale={8}
         size={3}
         speed={0.3}
-        color="#f59e0b"
+        color="#00E5FF"
         opacity={0.7}
       />
       <Stars 
@@ -71,13 +71,13 @@ export default function App() {
   const [isMobile, setIsMobile] = useState(false)
 
   const themeVars = useMemo(() => ({
-    '--background': '#020617',
-    '--primary-color': '#f97316',
-    '--secondary-color': '#f59e0b',
-    '--accent-color': '#ef4444',
+    '--background': '#050505',
+    '--primary-color': '#00E5FF',
+    '--secondary-color': '#3B0A60',
+    '--accent-color': '#00E5FF',
     '--text-main': '#ffffff',
     '--text-muted': '#94a3b8',
-    '--nav-bg': '#020617ee',
+    '--nav-bg': '#050505ee',
   }), [])
 
   useEffect(() => {
@@ -109,7 +109,7 @@ export default function App() {
         .bg-background { background-color: var(--background) !important; }
         
         .light-leaks {
-          background: radial-gradient(circle, rgba(249, 115, 22, 0.15) 0%, rgba(2, 6, 23, 0.9) 70%) !important;
+          background: radial-gradient(circle, rgba(59,10,96,0.45) 0%, rgba(5,5,5,0.9) 70%) !important;
         }
         .dust, .grain { opacity: 0.1; }
       `}</style>

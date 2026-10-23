@@ -43,12 +43,12 @@ function makePlaceholderTexture() {
   c.height = 370
   const g = c.getContext('2d')
   const grad = g.createLinearGradient(0, 0, 512, 370)
-  grad.addColorStop(0, '#1a2656')
-  grad.addColorStop(1, '#2f1c5e')
+  grad.addColorStop(0, '#3B0A60')
+  grad.addColorStop(1, '#050505')
   g.fillStyle = grad
   g.fillRect(0, 0, 512, 370)
   g.textAlign = 'center'
-  g.fillStyle = '#8aa0ff'
+  g.fillStyle = '#00E5FF'
   g.font = '600 30px monospace'
   g.fillText('NEW EDIT', 256, 150)
   g.fillStyle = '#eef0ff'
@@ -323,7 +323,7 @@ export default function GlobeShowcase() {
           className="pointer-events-none absolute left-0 top-0 opacity-0 transi
           tion-opacity duration-150 z-10"
         >
-          <span className="flex items-center justify-center w-16 h-16 rounded-full bg-paper text-void text-[11px] font-bold tracking-widest shadow-[0_0_30px_rgba(255,255,255,0.35)]">
+          <span className="flex items-center justify-center w-16 h-16 rounded-full bg-blue text-void text-[11px] font-bold tracking-widest shadow-[0_0_30px_rgba(0,229,255,0.5)]">
             VIEW
           </span>
         </div>

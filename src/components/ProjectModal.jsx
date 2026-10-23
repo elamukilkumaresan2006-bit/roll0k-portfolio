@@ -54,7 +54,7 @@ export default function ProjectModal({ project, onClose }) {
                   className="w-full h-full object-cover bg-black"
                 />
               ) : (
-                <div className="w-full h-full flex items-center justify-center bg-[linear-gradient(150deg,rgba(61,107,255,0.18),rgba(155,107,255,0.12))]">
+                <div className="w-full h-full flex items-center justify-center bg-[linear-gradient(150deg,rgba(0,229,255,0.18),rgba(59,10,96,0.36))]">
                   <span className="timecode text-sm text-white/60">
                     CLOUDINARY VIDEO PLACEHOLDER — {project.code}
                   </span>
